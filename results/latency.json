@@ -1,0 +1,22 @@
+{
+  "search_documents(hybrid, rerank=False)": {
+    "calls": 10,
+    "p50_s": 0.112,
+    "p95_s": 0.121
+  },
+  "search_documents(hybrid, rerank=True)": {
+    "calls": 10,
+    "p50_s": 58.634,
+    "p95_s": 61.636
+  },
+  "get_entity": {
+    "calls": 20,
+    "p50_s": 0.0,
+    "p95_s": 0.0
+  },
+  "get_neighbors": {
+    "calls": 20,
+    "p50_s": 0.0,
+    "p95_s": 0.0
+  }
+}

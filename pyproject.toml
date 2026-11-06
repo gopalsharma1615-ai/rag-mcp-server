@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rag-mcp-server"
+version = "0.1.0"
+description = "MCP server exposing layout-aware document search (layout-rag) and knowledge-graph walks (graphwalk-rag) as tools for any MCP client."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Gopal Sharma" }]
+requires-python = ">=3.10"
+dependencies = [
+  "mcp>=1.2",
+  "layout-rag[embed] @ git+https://github.com/gopalsharma1615-ai/layout-rag",
+  "graphwalk-rag[local] @ git+https://github.com/gopalsharma1615-ai/graphwalk-rag",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+rag-mcp-server = "rag_mcp_server.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
